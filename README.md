@@ -1,4 +1,4 @@
-Test RGB LED on ESP32 S3 dev board using deep sleep
+Test RGB LED on ESP32 S3 dev board using deep sleep between cycling through rainbow colors
 
 ![rgb xmas tree](https://github.com/joba-1/esp32-s3-rgb/blob/main/xmas.jpg?raw=true)
 
