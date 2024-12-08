@@ -11,8 +11,15 @@ template <
     bool R >      // reduce lower intensities
 class Circle {
 public:
-    Circle() : _rgb{0}, _c0(0), _c1(1), _i(0) {}
+    Circle() {}  // no init to retain values on deep sleep
     
+    void init() {
+        _rgb = {0};
+        _c0 = 0;
+        _c1 = 1;
+        _i = 0; 
+    }
+
     Circle &operator++() {
         _rgb[_c0] = IL - _i; 
         _rgb[_c1] = _i;
@@ -56,8 +63,8 @@ public:
 
 private:
     void update( unsigned r, unsigned g, unsigned b ) const {
-        // rgbLedWrite(_p, r, g, b);
-        neopixelWrite(_p, r, g, b);
+        rgbLedWrite(_p, r, g, b);
+        // neopixelWrite(_p, r, g, b);
     }
 
     int _p;
